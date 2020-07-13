@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>hi how are you</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <P id = "sample"></P>
+        <script>
+            var mydate = new Date();
+            let month = mydate.getMonth();
+            if (month < 10){
+                month = '0' + month;
+            }
+            let date = mydate.getDate();
+            if (date < 10){
+                date = '0' + month;
+            }
+            const year = mydate.getFullYear();
+            document.write(month +'/'+ date + '/'+ year)
+        </script>
+    </body>
+</html>
