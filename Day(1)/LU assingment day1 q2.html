@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Diffrence between var let and const</p>
+    <ul>
+    <li>var is not block scoped and let, const are block scoped </li>
+    <li>var supports hoisting whereas let and const do not</li>
+    <li>var and let do not require declaration on the same line whereas const does</li>
+    </ul>
+    <ol><b>var</b>
+        <li>The var variables belong to the global scope or local scope if they are declared inside a function:</li>
+        <li>The global var variables are added to the global object as properties. The global object is window on the web browser and global on Node.js:</li>
+        <li>However, the let variables are not added to the global object:</li>
+    </ol>
+    <ol><b>let</b>
+        <li>The let variables are blocked scopes:</li>
+        <li>However, the let variables are not added to the global object:</li>
+        <li>If you redeclare a variable with the let keyword, you will get an error:</li>
+    </ol>
+    <ol><b>const</b>
+        <li>The const variables are blocked scopes:</li>
+        <li>However, the const variables are not added to the global object:</li>
+        <li>If you change a variable with the let keyword, you will get an error:</li>
+    </ol>
+    <script>
+        //var
+        var a = 'string';
+        document.write("before hoisting happend: ",a,"<br>");
+        // hoisting
+        var a = 'hoisted'
+        //let
+        {
+            let a = 'new_string';
+            document.write("declared with let in a scope: ", a, "<br>");
+        }
+        document.write("declared with var outside a scope and after: ", a, "<br>");
+        
+        //const
+        const place = mumbei;
+        document.write("constant variable: ", place);
+        </script>
+</body>
+</html>
