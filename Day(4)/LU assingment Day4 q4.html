@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const input = Number(prompt("enter the start part"));
+
+        const operation = prompt("enter the operation you want to conduct(+, -, x, /, √(or sqrt), %");
+        if (operation != 'sqrt') {
+            var input_end = Number(prompt("enter the last part"));
+        }
+        switch(operation) {
+            case '+':
+                console.log(input + input_end)
+                break;
+            case '=':
+                console.log(+input - input_end)
+                break;
+            case 'x':
+                console.log(input * input_end)
+            case 'sqrt':
+                console.log(input ** 0.5)
+                break;
+            case '/':
+                console.log(input / input_end)
+                break;
+            case '%':
+                console.log((input/100)*input_end)
+                break;
+        }
+    </script>
+</body>
+</html>
