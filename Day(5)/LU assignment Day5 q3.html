@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // fetch API
+
+    fetch('https://jsonplaceholder.typicode.com/todos').then(response=>response.json()).then(function(data){
+        data.forEach(element => {
+            if (element.completed){
+                console.log(element);
+            }
+        });
+    }).catch(error=>console.log(error))
+
+    // async await
+
+
+    async function aynsc_await() {
+        let promise = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                fetch('https://jsonplaceholder.typicode.com/todos')
+                    .then(response=>response.json()).then(data=>{
+                    data.forEach(element => {
+                        if (element.completed){
+                            console.log(element);
+                        }
+                    });
+                })
+                resolve("done")
+            })
+        },3000)
+
+
+    }
+
+    aynsc_await()
+</script>
+</body>
+</html>

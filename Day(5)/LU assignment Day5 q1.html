@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <<script>
+        var list_numbers = [];
+        while (true) {
+            let a = eval(prompt("enter a number"));
+            if (typeof(a) === "number") {
+                list_numbers.push(a);
+            }
+            else{
+                break;
+            }
+        }
+
+        // filtering odd numbers
+        let list_odd = list_numbers.filter((value, index, array) => value % 2);
+
+        console.log(list_odd, list_numbers);
+
+        // cubing the filtered numbers list
+        let list_cube = list_odd.map((value, index, array) => value**3);
+
+        console.log(list_cube);
+
+        //one liner
+        let list_one_liner = list_numbers.filter(((value, index, array) => value % 2))
+            .map((value, index, array) => value**3);
+
+        console.log(list_one_liner);
+    </script>
+</body>
+</html>

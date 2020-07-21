@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+     class user {
+         constructor(name, age, email) {
+             this.name = name
+             this.age = age
+             this.email = email
+             this.courses = []
+             this.coins = 0
+         }
+         login() {
+             console.log(`${name} has logged in `)
+             return this
+         }
+         logout() {
+             console.log(`${name} has logged out`)
+             return this
+         }
+     }
+
+     class moderator extends user {
+
+         AddCoins(user, num= 1) {
+             user.coins ++;
+             return this.coins
+         }
+
+         removeCoin(user, num = 1) {
+             user.coins --;
+             return this.coins
+         }
+     }
+
+     class Admin extends moderator {
+
+         Addcourse(user, course){
+             user.courses.push(course);
+         }
+         removecourse(user, course) {
+             try {
+                 const index = user.courses.indexOf(course);
+                 if (index >= 0) {
+                     user.courses.splice(index, 1);
+                 }
+                 else {
+                     console.log(`user is not enrolled in this ${course}`);
+                 }
+             }
+             catch (error) {
+                 console.log(`An error occurred: ${error}`)
+             }
+         }
+     }
+
+     let user1 = new user('mashiro', 16, "m@gmail.com");
+     let user2 = new user('yuzuru', 18, "y@gmail.com");
+     let user3 = new user('adam', 20, "a@gmail.com");
+     let user4 = new user('eren', 22, "e@gmail.com");
+     let moderator1 = new  moderator("tanaka", 24, "t@gmail.com");
+     let moderator2 = new  moderator("shiba", 26, "s@gmail.com");
+     let admin1 = new Admin("zeno", 28, "z@gmail.com")
+
+     console.log(user1, user2, user3, user4);
+
+     console.log(moderator1, moderator2);
+
+     console.log(admin1);
+
+     user1.login()
+     user1.logout()
+
+     moderator1.AddCoins(user1)
+     moderator1.AddCoins(user1)
+     moderator2.removeCoin(user1)
+
+     admin1.Addcourse(user1, "javascript");
+     admin1.Addcourse(user1, "python");
+     admin1.removecourse(user1, "kljdfakld");
+
+
+     console.log(user1);
+ </script>
+</body>
+</html>
