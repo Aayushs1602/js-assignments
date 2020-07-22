@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+
+     arr_color = ["green", "yellow", "blue", "red", "pink"]
+
+     let index = 0;
+
+     function change_color() {
+
+         document.body.style.background = arr_color[index];
+
+         index += 1;
+         if (index > arr_color.length){
+             index = 0
+         }
+     }
+
+     setInterval(change_color,5000)
+ </script>
+</body>
+</html>

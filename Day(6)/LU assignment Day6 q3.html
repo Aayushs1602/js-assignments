@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <script>
+       const name = prompt("enter your name");
+
+       const head = document.getElementById("name");
+
+       head.innerText = `Welcome to the web page ${name}`;
+
+       let timing = document.getElementById("clock");
+
+       function addclock() {
+           let thing = new Date();
+           let time = thing.toLocaleTimeString();
+           timing.innerText = `${time}`;
+       }
+
+       setInterval(addclock,1000)
+
+       let button1 = document.getElementById("btn");
+       let click = 1;
+
+       button1.onclick = ()=>{
+           let bg_body =  click === 1? 'black' : 'white';
+           let bg_back =  click === 1  ? 'white' : 'black'
+           document.body.style.backgroundColor = bg_back;
+           document.body.style.color = bg_body;
+           click = click * -1
+       }
+
+       // button1.onclick = ()=> {
+       //     button1.classList.toggle("dark")
+       // }
+   </script>
+</body>
+</html>
